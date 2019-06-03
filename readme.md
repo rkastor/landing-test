@@ -6,20 +6,20 @@
 install packages
 
 ```
-*npm install*
+npm install
 
 ```
 run build project
 ```
-*gulp build*
+gulp build
 
-*or prod.cmd*
+or prod.cmd
 ```
 
 or start watch via devServer
 
 ```
-*gulp dev*
+gulp dev
 
-*or dev.cmd*
+or dev.cmd
 ```
