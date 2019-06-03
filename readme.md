@@ -1,33 +1,25 @@
 # Eltex test. Landing page
 
-One Paragraph of project description goes here
-
 
 ### Installing
-
-A step by step series of examples that tell you how to get a development env running
 
 install packages
 
 ```
-npm install
-	
-npm install --global gulp
+*npm install*
+
 ```
 run build project
 ```
-gulp build
+*gulp build*
+
+*or prod.cmd*
 ```
-or prod.cmd
-```
+
 or start watch via devServer
 
 ```
-gulp dev
-```
-or dev.cmd
-```
+*gulp dev*
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+*or dev.cmd*
+```
