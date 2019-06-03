@@ -1,10 +1,6 @@
-# Project Title
+# Eltex test. Landing page
 
 One Paragraph of project description goes here
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 
 ### Installing
@@ -22,10 +18,14 @@ run build project
 ```
 gulp build
 ```
+or prod.cmd
+```
 or start watch via devServer
 
 ```
-gulp watch
+gulp dev
+```
+or dev.cmd
 ```
 
 ## Deployment
