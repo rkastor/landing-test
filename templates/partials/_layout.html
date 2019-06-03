@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>{{page_title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content=""/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content=""/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content=""/>
+    <link rel="shortcut icon" type="image/ico" href="./dist/img/favicon.ico">
+    <link rel="stylesheet" href="./dist/css/vendor.min.css">
+    {# prod #}
+    <link rel="stylesheet" href="./dist/css/app.min.css">
+    {# dev #}
+    <link rel="stylesheet" href="./dist/css/app.css">
+</head>
+
+<body class="{{main_class}}">
+
+<div class="wrapper">
+    {% include "partials/header.html" %}
+
+    <main class="main">
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+    {% include "partials/footer.html" %}
+</div>
+
+
+
+<script src="./dist/js/vendor.min.js"></script>
+<script src="./dist/js/main.min.js"></script>
+
+</body>
+</html>
