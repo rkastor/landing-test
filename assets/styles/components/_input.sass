@@ -1,0 +1,48 @@
+$input-height: 45px
+$input-radius: 4px
+.input
+	&__control
+		display: block
+		width: 100%
+		height: $input-height
+		padding: 0 22px
+
+		border: 1px solid $c-dark
+		border-radius: $input-radius
+		outline: none
+
+		font-size: $fs-16
+		+var(color, dark)
+
+
+		+placeholder
+			+var(color, grey)
+
+		&:focus
+			border: 1px solid #BFBFBF
+
+		&:hover
+			border: 1px solid #BFBFBF
+			+placeholder
+				+var(color, dark)
+
+		&--single
+			margin-bottom: 0
+
+		&--select
+			padding-right: 40px
+
+			+ svg,
+			+ .icon 
+				position: absolute
+				top: 12px
+				font-size: 22px
+				right: 18px
+				transition: transform .2s
+
+			&.open
+				+ svg,
+				+ .icon
+					transform: rotateZ(180deg)
+
+

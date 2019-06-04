@@ -1,0 +1,66 @@
+.price
+    padding: 80px 15px
+
+    &__title
+        font-size: 12px
+        font-weight: 500
+
+    &__coast
+        font-size: 50px
+        font-weight: 900
+        margin: 40px 0
+    &__desc
+        color: rgba($c-dark, .5)
+        font-size: 14px
+
+    .link
+        @extend .btn
+        background-color: transparent
+        color: $c-dark
+        position: absolute
+        bottom: 50px
+        font-weight: 500
+        // left: 0
+        // right: 0
+        // margin-left: auto
+        // margin-right: auto
+        +center(h)
+        &:hover
+            +center(h)
+            background-color: transparent
+
+    .flex
+        +r(760)
+            justify-content: center
+
+    .col
+        flex: 1 100%
+        line-height: 22px
+        margin-bottom: 20px
+        font-size: 14px
+        font-weight: 500
+        text-align: center
+        padding: 40px 40px 150px
+        position: relative
+        border-radius: 2px
+        +rmin(761)
+            flex: 0 0 30%
+        +r(760)
+            flex: 0 0 50%
+            max-width: 100%
+        +xs
+            flex: 1 100%
+            max-width: 100%
+
+        &.black
+            color: $c-light
+            background-color: $c-dark
+
+            .price__desc
+                color: rgba($c-light, .5)
+
+            .link
+                @extend .btn--lazure
+                @extend .btn--rounded
+                &:hover
+                    +center(h)

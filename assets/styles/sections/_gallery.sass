@@ -1,0 +1,33 @@
+.gallery
+    min-height: 100vh
+    overflow: hidden
+
+    &__item
+        display: inline-block
+        position: relative
+
+        &:hover
+            z-index: 1
+            img
+                filter: brightness(30%);
+
+            .btn
+                opacity: 1
+
+        a
+            display: block
+
+        img
+            transition: .2s
+
+        .btn
+            opacity: 0
+            position: absolute
+            left: 0
+            right: 0
+            top: 50%
+            transform: translateY(-50%)
+            margin-left: auto
+            margin-right: auto
+            &:hover
+                opacity: 1

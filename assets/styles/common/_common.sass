@@ -1,0 +1,310 @@
+\:root
+	@each $prop, $val in $vars
+ 		--#{$prop}: #{$val}
+
+html
+	position: relative
+	box-sizing: border-box
+	min-height: 100%
+
+*,	*::before, *::after
+	box-sizing: inherit
+::-ms-clear
+	display: none
+*
+	&:focus, &:visited, &:active, &:hover
+		outline: 0 !important
+	&::-moz-focus-inner
+		border: 0
+
+html,body
+	height: 100%;
+
+body
+	+var(background-color, bg)
+	+monserrat 
+	// font-size: $fs-16
+	font-size: 12px
+	line-height: 1
+	overflow-x: hidden
+
+.wrapper
+	position: relative
+	// overflow: hidden
+	padding: 0
+	min-width: 320px
+
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+main
+	flex: 1 0 auto;
+
+.container, .container-fluid
+	padding: 0
+
+.container 
+	max-width: 1024px
+	width: 100%
+	margin-left: auto
+	margin-right: auto
+	+r(1024)
+		max-width: 100%
+		padding-left: 15px
+		padding-right: 15px
+span
+	display: inline-block
+a
+	color: inherit
+	font-family: inherit
+	font-size: inherit
+	font-weight: inherit
+	text-decoration: none
+	cursor: pointer
+	&:visited,
+	&:hover,
+	&:active
+		outline: none !important
+		text-decoration: none !important
+
+a, input, textarea, button
+	outline: none
+	text-decoration: none
+
+
+b
+	font-weight: 700
+
+.h1
+	font-size: 72px
+	+md
+		font-size: 56px
+	+xs
+		font-size: 32px
+
+.h1-mb
+	margin-bottom: 0.8em
+
+.h2
+	font-size: 34px
+	font-weight: 600
+	line-height: $line-height
+
+.h3
+	font-size: 26px
+	font-weight: 600
+	line-height: $line-height
+
+.title
+	text-transform: uppercase
+
+.plain
+
+	font-size: 16px
+	font-weight: 400
+	line-height: $line-height
+
+.text
+	font-size: $fs-18
+	// font-weight: 600
+	+var(color, dark)
+
+.link
+	display: inline-block
+	font-weight: 500
+	font-size: 12px
+	line-height: 1.5em
+	letter-spacing: 0.05em
+
+.upper
+	text-transform: uppercase
+
+.c-light
+	+var(color, light)
+
+.c-dark
+	+var(color, dark)
+
+.c-purple
+	+var(color, purple)
+
+.c-silver
+	+var(color, silver)
+
+
+.caption
+
+	font-weight: 500
+	font-size: 12px
+	line-height: $line-height
+
+.mb-10
+	margin-bottom: 10px
+
+.mb-15
+	margin-bottom: 15px
+
+.mb-20
+	margin-bottom: 20px
+
+.mb-30
+	margin-bottom: 30px
+
+.mb-40
+	margin-bottom: 40px
+
+.mb-50
+	margin-bottom: 50px
+
+.mt-10
+	margin-top: 10px
+
+.mt-15
+	margin-top: 15px
+
+.mt-20
+	margin-top: 20px
+
+.mt-30
+	margin-top: 30px
+
+.mt-40
+	margin-top: 40px
+
+.mt-50
+	margin-top: 50px
+
+.icomoon
+	font-family: 'icomoon' !important
+	speak: none
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	text-transform: none
+	line-height: 1
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+strong
+	font-weight: bolder
+button
+	outline: none
+	border: none
+
+input
+	color: inherit
+	&::-webkit-input-placeholder
+		color: #fff
+		transition: opacity .3s,transform .2s
+		font-family: inherit
+		font-size: 14px
+		opacity: 1
+	&:focus
+		&::-webkit-input-placeholder
+			transform: translateX(20px)
+			opacity: 0
+
+.bold
+	font-weight: 700
+
+.circle
+	border-radius: 50%
+
+.block
+	display: block
+
+.w-100
+	width: 100%
+
+.max-900
+	max-width: 900px
+	width: 100%
+.max-600
+	max-width: 600px
+	width: 100% 
+.max-500
+	max-width: 510px
+	width: 100% 
+.max-460
+	max-width: 460px
+	width: 100%
+.max-430
+	max-width: 430px
+	width: 100%
+.max-400
+	max-width: 400px
+	width: 100%
+
+img
+	max-width: 100%
+
+.hero__img
+	border-right: none
+	border-left: none
+	position: absolute
+	top: 0
+	left: 0
+	width: 100vw
+	height: 100vh
+	z-index: $z-element - 1
+	background-size: cover
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+.hero__title 
+
+
+.block-center
+	margin-left: auto
+	margin-right: auto
+
+.text-center
+	text-align: center
+
+.text-left
+	text-align: left
+	
+.text-right
+	text-align: right
+
+.fw-100
+	font-weight: 100
+	
+.fw-500
+	font-weight: 500
+
+.fw-600
+	font-weight: 600
+
+.fw-900
+	font-weight: 900
+
+
+.action__block
+	z-index: $z-element + 1
+
+.section__title
+	margin-bottom: 30px
+
+
+.form-group
+	position: relative
+
+.next-slide-btn
+	position: relative
+	z-index: 9999
+	display: block
+	text-align: center
+	transition: transform .2s
+
+	svg
+		fill: $c-light
+		font-size: 32px
+
+	&:focus,
+	&:active
+		transform: scale(1.5)
+

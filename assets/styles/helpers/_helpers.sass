@@ -1,0 +1,60 @@
+@function em($size, $context: 16)
+	@return ($size/$context) * 1em
+
+@function img-url($image)
+	@return url('../img/#{$image}')
+
+=image($image)
+	background-image: img-url($image)
+
+=trans($what: all, $dur: 0.2s, $easing: ease)
+	transition: $what $dur $easing
+
+=smooth-scroll
+	-webkit-overflow-scrolling: touch
+
+=smooth-font
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+=gpu
+	transform: translate3d(0,0,0)
+
+=xl
+	+r(1399)
+		@content
+=lg
+	+r(1023)
+	 @content
+
+=md
+	+r(768)
+		@content
+
+=sm
+	+r(576)
+		@content
+
+=xs
+	+r(375)
+		@content
+
+=min-xl
+	+rmin(1400)
+	 @content
+
+=min-lg
+	+rmin(1024)
+	 @content
+
+=min-md
+	+rmin(769)
+		@content
+
+=min-sm
+	+rmin(576)
+		@content
+
+=min-xs
+	+rmin(376)
+		@content

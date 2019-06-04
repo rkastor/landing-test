@@ -1,0 +1,116 @@
+.header
+    font-size: 12px
+    text-transform: uppercase
+    position: fixed
+    padding-top: 50px
+    padding-bottom: 20px
+    left: 0
+    right: 0
+    z-index: $z-element + 1
+    transition: .3s ease
+
+    &.fixed
+        background-color: rgba($c-bg, .7)
+        padding-top: 20px
+        padding-bottom: 10px
+
+    ul,
+    nav
+        list-style: none
+
+    &__container
+
+        > *
+            flex: 1 auto
+
+    &__logo
+        
+    &__logo-img
+        max-width: 35px
+        transition: opacity .2s
+        &:hover
+            opacity: .7
+
+    &__nav 
+
+    &__menu
+        +r(800)
+            display: none
+        +r(760)
+            flex-direction: column
+    
+    &__menu-item
+        padding: 0 15px
+        position: relative
+
+        a
+            color: $c-grey
+            font-weight: 500;
+
+        &.active
+            a 
+                color: $c-dark
+        &.has-child
+
+            &::after
+                content: ''
+                display: inline-block
+                position: relative
+                border-top: 3px solid $c-grey
+                border-left: 3px solid transparent
+                border-right: 3px solid transparent
+                transform: translateY(-90%);
+                margin-left: 2px;
+                transition: transform .2s
+
+            &:hover
+                .sub-menu
+                    visibility: visible
+                    opacity: 1
+                    transform: translateY(5px)
+                &::after
+                    transform: rotateZ(-90deg) translateY(-50%) translateX(50%)
+
+
+    &__btn-init
+        margin-left: 15px
+        font-weight: 500;
+
+    &__burger
+        padding-left: 30px
+        @extend .flex-align-items-center
+
+    &__burger-menu
+        top: 50%
+
+    .sub-menu
+        display: flex
+        flex-direction: column
+        position: absolute
+        padding: 24px 23px 20px
+        min-width: 180px
+        background-color: $c-dark
+
+        visibility: hidden
+        opacity: 0
+        transform: translateY(10px)
+        transition: .4s
+
+        &.showed
+            opacity: 1
+            visibility: visible
+            transform: translateY(2px)
+
+        &__item
+            padding: 7px 0px
+            display: inline-block
+            a
+                color: rgba($c-light, .7)
+                font-weight: 500;
+                display: inline-block
+                transition: transform .1s
+
+            &:hover
+                a 
+                    color: $c-light
+                    transform: translateX(1px)

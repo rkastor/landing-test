@@ -1,0 +1,34 @@
+.section
+    &--hero
+        min-height: 100vh
+        width: 100%
+        display: flex
+        align-items: center
+
+        +r(1500)
+            min-height: 90vh
+        +r(1024)
+            min-height: 100vh
+
+
+        > .container
+            z-index: $z-element
+            +r(1500)
+                margin-top: -150px
+
+        .hero
+            &__img
+                user-select: none
+                pointer-events: none
+                img
+                    object-position: top
+
+            &__title
+                font-weight: 100
+                margin-bottom: 20px
+
+            &__desc
+                position: relative
+                font-weight: 500
+                color: $c-dark
+                text-transform: uppercase

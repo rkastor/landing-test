@@ -1,0 +1,26 @@
+.burger
+    display: inline-flex
+    size: 20px 12px
+    flex-direction: column
+    justify-content: space-between
+    cursor: pointer
+
+    span
+        background-color: $c-dark
+        height: 2px
+        width: 20px
+        display: inline-block
+        transition: .3s ease
+
+    
+
+    &.active
+        // transform: translateX(-7px)
+        span
+            &:nth-child(1)
+                transform: rotateZ(135deg) translateY(-7px)
+            &:nth-child(2)
+                opacity: 0
+                transform: scale(1.5)
+            &:nth-child(3)
+                transform: rotateZ(-135deg) translateY(7px)

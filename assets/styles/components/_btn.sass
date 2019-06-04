@@ -1,0 +1,35 @@
+.btn 
+	display: inline-block
+	max-width: max-content
+	padding: 16px 20px
+	color: $c-light
+	background-color: $c-dark
+	transition: all .2s
+	will-change: transform, background-color
+
+	&:hover,
+	&:focus
+		background-color: rgba($c-dark, .8)
+		transform: translateY(-2px)
+		box-shadow: 0 2px 5px rgba($c-dark, .1)
+	&:active
+		background-color: rgba($c-dark, .9)
+		transform: translateY(1px)
+		box-shadow: 0 1px 3px rgba($c-dark, .3)
+
+	&--rounded
+		border-radius: 25px
+
+	&--lazure
+		background-color: $c-sea
+		color: $c-dark
+
+		&:hover,
+		&:focus
+			background-color: rgba($c-sea, .8)
+			transform: translateY(-2px)
+			box-shadow: 0 2px 5px rgba($c-sea, .1)
+		&:active
+			background-color: rgba($c-sea, .9)
+			transform: translateY(1px)
+			box-shadow: 0 1px 3px rgba($c-sea, .3)

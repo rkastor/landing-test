@@ -40,8 +40,8 @@ var gulp          = require('gulp'),
 /**************************Компиляция SASS*************************************/
 gulp.task('sass', function() {
     return gulp.src(dirStyles_src + '/*.{sass,scss}')
-        .pipe(wait(500))
         .pipe(plumber())
+        .pipe(wait(500))
         .pipe(
             sass({
                 outputStyle: 'compressed'
@@ -69,7 +69,8 @@ gulp.task('sass', function() {
 gulp.task('scripts_libs', function() {
     return gulp.src([
         npmDir + '/jquery/dist/jquery.min.js',
-        npmDir + '/swiper/dist/js/swiper.min.js'
+        npmDir + '/swiper/dist/js/swiper.min.js',
+        npmDir + '/aos/dist/aos.js',
     ])
         .pipe(plumber())
         .pipe(concat('vendor.min.js'))
@@ -91,6 +92,7 @@ gulp.task("css-libs", function () {
   return gulp.src([
         npmDir + '/reset-css/reset.css',
         npmDir + '/swiper/dist/css/swiper.css',
+        npmDir + '/aos/dist/aos.css',
   ])
     .pipe(concat("vendor.min.css"))
     .pipe(gulp.dest(dirStyles_dist));
@@ -107,7 +109,9 @@ gulp.task('cleare', function(){
 
 /**************************Уменьшение изображений******************************/
 gulp.task('img', function(){
-    return gulp.src(dirImg_src+'/**/*')
+    return gulp.src([
+        dirImg_src+'/**/*',
+    ])
         .pipe(cache(imagemin({
             interlaced: true,
             progressive: true,
@@ -160,19 +164,19 @@ gulp.task('browser-sync', function () {
         notify: false
     });
 
-    gulp.watch([dirStyles_src + '/**/*'], ['sass']).on("change add", browserSync.reload);
-    gulp.watch([dirImg_src]).on("change add", browserSync.reload);
-    gulp.watch([dirScripts_src + '/**/*.js']).on("change add", browserSync.reload);
-    gulp.watch([dirFonts_src], ["fonts"]).on("change add", browserSync.reload);
-    gulp.watch([dirHtml_src + "/**/*"]).on("change add", browserSync.reload);
+    gulp.watch([dirStyles_src + '/**/*.{sass,scss}'], ['sass']).on("change", browserSync.reload);
+    gulp.watch([dirImg_src]).on("change", browserSync.reload);
+    gulp.watch([dirScripts_src + '/**/*.js']).on("change", browserSync.reload);
+    gulp.watch([dirFonts_src], ["fonts"]).on("change", browserSync.reload);
+    gulp.watch([dirHtml_src + "/**/*"]).on("change", browserSync.reload);
 });
 
 
-gulp.task('build-stask', ['sass', 'img', 'css-libs', 'scripts_main', 'scripts_libs', 'fonts']);
+gulp.task('build-stack', ['sass', 'img', 'css-libs', 'scripts_main', 'scripts_libs', 'fonts']);
 
 /*************************************Dev WATCH************************************/
-gulp.task('dev', ['browser-sync', 'nunjucks-render', 'build-stask'], function () {
-    gulp.watch([dirStyles_src + '/**/*'], ['sass']);
+gulp.task('dev', ['browser-sync', 'nunjucks-render', 'build-stack'], function () {
+    gulp.watch([dirStyles_src + '/**/*.{sass,scss}'], ['sass']);
     gulp.watch([dirScripts_src+'/**/*.js'], ["scripts_main"]);
     // gulp.watch([dirImg_src + "/**/*"]);
     gulp.watch([dirImg_src], ["img"]);
@@ -183,4 +187,4 @@ gulp.task('dev', ['browser-sync', 'nunjucks-render', 'build-stask'], function ()
 
 
 /*************************************Prod Build***********************************/
-gulp.task('build', ['clean', 'build-stask']);
+gulp.task('build', ['clean', 'build-stack']);

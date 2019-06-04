@@ -1,0 +1,102 @@
+.about
+    background-color: $c-bg
+    padding: 100px 0 80px
+    position: relative
+
+    .col
+        flex: 1 100%
+        line-height: 22px
+        margin-bottom: 20px
+        font-size: 14px
+        font-weight: 500
+        +rmin(560)
+            flex: 0 0 30%
+            max-width: 280px
+
+        .head
+            font-size: 16px
+        .text
+            font-size: 14px
+            margin: 20px 0
+            color: rgba($c-silver, .5)
+        .link
+            display: inline-block
+            font-size: 12px
+            text-transform: uppercase
+            transition: .2s
+            border-bottom: 1px solid transparent
+
+            &:hover 
+                border-bottom: 1px solid $c-dark
+                text-decoration: underline
+                transform: translateY(-1px)
+
+    &.plash
+        padding-top: 0
+        padding-left: 120px;
+        padding-right: 120px
+        padding-bottom: 200px
+
+        +r(900)
+            padding-left: 0
+            padding-right: 0
+
+        img
+            position: absolute
+            right: 0
+            top: 30%
+            z-index: 999
+            +r(1600)
+                max-width: 50%
+            +r(1280)
+                max-width: 50%
+                top: 60%
+
+    &__plash
+        padding: 130px 130px 115px
+        background-color: $c-dark
+        border-radius: 2px
+        min-height: 80vh
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+
+        +r(1024)
+            margin: 0
+
+        .h1
+            line-height: 1.1em
+
+        .text
+            font-size: 14px
+            line-height: 1.5em
+            color: rgba($c-light, .5)
+            font-weight: 500
+
+
+        .btn
+            font-size: 12px
+            min-width: 180px
+            text-align: center
+
+    .caption
+        &__list
+
+        &__item
+            flex: 1 100%
+            line-height: 22px
+            margin-bottom: 20px
+            font-size: 14px
+            font-weight: 500
+            padding-left: 0
+            padding-right: 0
+            +rmin(761)
+                flex: 0 0 30%
+                max-width: 280px
+            +r(760)
+                flex: 0 0 50%
+                max-width: 100%
+                padding-right: 15px
+
+        &__title
+            padding-top: 0

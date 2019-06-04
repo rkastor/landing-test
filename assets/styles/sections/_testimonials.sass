@@ -1,0 +1,41 @@
+.testimonials
+    padding-top: 0
+
+    blockquote
+        background-color: $c-light
+        padding: 100px 60px
+        text-align: center
+
+        &::before,
+        &::after
+            content: ''
+            display: inline-block
+            size: 20px
+            position: absolute
+            background-repeat: no-repeat !important
+        &::before
+            background-image: url(/images/icons/brack-start.png)
+            background-position: center
+            background-size: contain
+            top: 40px
+            left: 40px
+        &::after
+            background-image: url(/images/icons/brack-end.png)
+            background-position: center
+            background-size: contain
+            bottom: 40px
+            right: 40px
+
+
+        .text
+            font-weight: 100
+            font-size: 42px
+
+        .author
+            margin-top: 30px
+            display: inline-block
+            font-size: 12px
+            font-weight: 500
+        
+        & + blockquote
+            // margin-left: 25px
